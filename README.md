@@ -26,3 +26,8 @@
 - 1.0.2 添加了java的HelloWorld代码 (test)
 - 1.0.3 添加了go的HelloWorld代码
 - 1.0.4 添加了html的HelloWorld代码
+- 1.0.5 添加了c的HelloWorld代码
+- 1.0.6 添加了c++的HelloWorld代码
+- 1.0.7 添加了c#的HelloWorld代码
+
+
