@@ -24,4 +24,5 @@
 - 1.0.0 初始版本
 - 1.0.1 修复已知bug
 - 1.0.2 添加了java的HelloWorld代码 (test)
+- 1.0.3 添加了go的HelloWorld代码
 
