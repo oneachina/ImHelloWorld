@@ -1,4 +1,4 @@
-//HelloWorld cpp/c
+//HelloWorld c++/c
 #include <iostream>
 using namespace std;
 

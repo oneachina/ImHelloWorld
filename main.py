@@ -17,6 +17,7 @@ print("2. 查看帮助 (这是死循环;) )")
 print("3. 执行hello world")
 print("4. 退出")
 
+#?
 while True:
     command = input("请输入要执行的命令:")
     if command == "1":
