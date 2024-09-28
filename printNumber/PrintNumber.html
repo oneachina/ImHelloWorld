@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- no html :)-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>随机选号器</title>
+    <!-- <link rel="stylesheet" href="css/change.css" type="text/css"/> -->
+    <style>
+        .text1 {
+            /*文本框*/
+            height: 400px;
+            width: 400px;
+            font-size: 340px;
+            border: 5px dashed cornflowerblue;
+            /*设置所有边框属性。*/
+            border-radius: 10px;
+            /*给元素设置圆角边框*/
+            text-align: center;
+        }
+
+        .text2 {
+            position: relative;
+            /*relative是相对定位，是相对于前面的容器定位的。*/
+            top: 40px;
+            left: -90px;
+            height: 40px;
+            width: 100px;
+        }
+
+        .text3 {
+            position: relative;
+            top: 40px;
+            left: 90px;
+            height: 40px;
+            width: 100px;
+        }
+
+        div {
+            text-align: center;
+        }
+    </style>
+    <script>
+        var timer;
+        //开始
+        function startText() {
+            //判断一分钟只能点击一次
+            var d = new Date();
+            var minute = d.getMinutes()  //获取分钟
+            var num = Math.floor(Math.random() * 100); //随机产生0到99的数
+            document.getElementById("myText").value = num;
+            timer = setTimeout("startText()", 60);	//定时器函数，递归调用
+        }
+        //暂停
+        function stopText() {
+            clearTimeout(timer);	//清除创建的定时器
+        }
+        //时间
+        window.onload = function () {
+            window.requestAnimationFrame(getDate)
+        }
+
+        function getDate() {
+            window.setTimeout(function () {
+                window.requestAnimationFrame(getDate)
+            }, 1000 / 2)
+
+            var d = new Date();
+            var year = d.getFullYear()  //获取年
+            var month = d.getMonth() + 1;  //获取月，从 Date 对象返回月份 (0 ~ 11)，故在此处+1
+            var day = d.getDay()    //获取日
+            var days = d.getDate() //获取日期
+            var hour = d.getHours()   //获取小时
+            var minute = d.getMinutes()  //获取分钟
+            var second = d.getSeconds()   //获取秒
+            if (month < 10) month = "0" + month
+            if (days < 10) days = "0" + days
+            if (hour < 10) hour = "0" + hour
+            if (minute < 10) minute = "0" + minute
+            if (second < 10) second = "0" + second
+            var week = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六")
+            var Tools = document.getElementById("Main")
+            var da = year + " 年 " + month + " 月 " + days + " 日 " + week[day] + " " + hour + " : " + minute + " :" + second
+            Tools.innerHTML = da
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <div id="Main"></div>
+        <form>
+            <input type="text" class="text1" value="0" id="myText" /><br />
+            <input type="button" class="text2" value="开始" onclick="startText()" />
+            <input type="button" class="text3" value="停止" onclick="stopText()" /> <!--onclick事件会在元素被点击时发生-->
+        </form>
+    </div>
+    <script type="text/javascript" src="js/p1.js"></script>
+</body>
+
+</html>

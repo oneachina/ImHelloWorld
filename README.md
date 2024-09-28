@@ -1,4 +1,4 @@
-# 本软件与核桃编程毫无关系
+# 本软件与核桃编程毫无关系 ;)
 
 目录
 
@@ -36,3 +36,4 @@
 - 1.0.11 添加了php的HelloWorld代码
 - 1.0.12 添加了swift的HelloWorld代码 I love apple!
 - 1.0.13 添加了ruby的HelloWorld代码
+- 1.0.14 Greet?
